@@ -12,7 +12,6 @@ const Temp = () => {
       let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=${process.env.REACT_APP_API_KEY}`;
       const res = await fetch(url);
       const data = await res.json();
-      
       const { temp, humidity, pressure } = data.main;
       const {main: weathermood} = data.weather[0];
       const {name} = data;
@@ -28,7 +27,6 @@ const Temp = () => {
         country,
         sunset,
       };
-
       setTempInfo(myNewWeatherInfo);
     }
     catch(error){
